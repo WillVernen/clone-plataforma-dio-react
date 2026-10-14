@@ -50,9 +50,9 @@ A aplicação estará em `http://localhost:3000` e a API em `http://localhost:80
 
 Também existe a conta `vernen@email.com`, com a mesma senha. Novos cadastros são gravados no arquivo local `db.json`.
 
-## Publicação
+## Publicação no GitHub Pages
 
-O GitHub Actions publica a aplicação no GitHub Pages sempre que há um push na branch `main`. O endereço público é [willvernen.github.io/clone-plataforma-dio-react](https://willvernen.github.io/clone-plataforma-dio-react/).
+Para ativar a publicação automática, no repositório abra **Settings → Pages → Build and deployment** e selecione **GitHub Actions** como origem. Depois que o workflow concluir com sucesso, o GitHub Pages estará disponível em [willvernen.github.io/clone-plataforma-dio-react](https://willvernen.github.io/clone-plataforma-dio-react/). A cada push na branch `main`, o GitHub Actions publicará a versão atualizada.
 
 ## Autoria e licença
 
