@@ -2,7 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://willvernen.github.io/clone-plataforma-dio-react",
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
     "@testing-library/dom": "^10.4.2",
