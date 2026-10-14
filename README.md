@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# DIO — Plataforma de cursos de tecnologia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto de uma plataforma de cursos de tecnologia com página inicial, feed, login e cadastro, desenvolvido com React.
 
-## Available Scripts
+## Demonstração
 
-In the project directory, you can run:
+Acesse a demonstração visual publicada no GitHub Pages:
 
-### `npm start`
+**[Abrir demonstração](https://willvernen.github.io/clone-plataforma-dio-react/)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O GitHub Pages hospeda a interface estática. As funções de login e cadastro dependem da API JSON Server, que roda localmente durante o desenvolvimento e não está hospedada na demonstração.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias
 
-### `npm test`
+- React
+- React Router
+- Styled Components
+- React Hook Form e Yup
+- Axios
+- JSON Server para a API local de demonstração
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como executar localmente
 
-### `npm run build`
+Requisitos: Node.js e npm.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Instale as dependências:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```sh
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Inicie a API em um terminal:
 
-### `npm run eject`
+   ```sh
+   npm run api
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Em outro terminal, inicie a aplicação:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A aplicação estará em `http://localhost:3000` e a API em `http://localhost:8001`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Conta de demonstração local
 
-## Learn More
+- E-mail: `will@email.com`
+- Senha: `123456`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Também existe a conta `vernen@email.com`, com a mesma senha. Novos cadastros são gravados no arquivo local `db.json`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Publicação
 
-### Code Splitting
+O GitHub Actions publica a aplicação no GitHub Pages sempre que há um push na branch `main`. O endereço público é [willvernen.github.io/clone-plataforma-dio-react](https://willvernen.github.io/clone-plataforma-dio-react/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Autoria e licença
 
-### Analyzing the Bundle Size
+Projeto desenvolvido por **Will Vernen**. Distribuído sob a licença [MIT](./LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Aviso sobre autenticação
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O JSON Server é usado apenas para demonstração local. Ele armazena senhas em texto puro e não fornece autenticação segura. Não use esse mecanismo em produção; uma aplicação real deve validar credenciais no servidor, armazenar senhas com hash seguro e gerenciar sessões ou tokens.
