@@ -11,6 +11,11 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { api } from '../../services/api';
 
+type LoginFormValues = {
+  email: string;
+  password: string;
+};
+
 const schema = yup.object({
   email: yup.string().trim().email('E-mail inválido').required('Informe seu e-mail'),
   password: yup.string().required('Informe sua senha'),
@@ -19,15 +24,15 @@ const schema = yup.object({
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const registrationMessage = location.state?.message;
-  const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm({
+  const registrationMessage = location.state?.message as string | undefined;
+  const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginFormValues>({
     defaultValues: { email: '', password: '' },
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
   const [serverError, setServerError] = useState('');
 
-  const onSubmit = async ({ email, password }) => {
+  const onSubmit = async ({ email, password }: LoginFormValues) => {
     setServerError('');
     try {
       const { data: users } = await api.get('/users', {

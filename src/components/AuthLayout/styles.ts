@@ -56,7 +56,7 @@ export const Subtitle = styled.p`
     line-height: 1.5;
 `;
 
-export const StatusMessage = styled.p`
+export const StatusMessage = styled.p<{ $type: 'success' | 'error' }>`
     margin: -10px 0 18px;
     font-size: 13px;
     line-height: 1.5;

@@ -16,7 +16,7 @@ export const Container = styled.main`
         flex-direction: column;
         margin-top: 32px;
     }
-`
+`;
 
 export const Title = styled.h3`
     font-family: 'Open Sans';
@@ -26,7 +26,7 @@ export const Title = styled.h3`
     margin-bottom: 24px;
     line-height: 25px;
     color: #ffffff;
-`
+`;
 
 export const TitleHighLight = styled.h3`
     font-family: 'Open Sans';
@@ -36,13 +36,13 @@ export const TitleHighLight = styled.h3`
     margin-bottom: 24px;
     line-height: 25px;
     color: #ffffff70;
-`
+`;
 
-export const Column = styled.div`
+export const Column = styled.div<{ $flex: number }>`
     flex: ${({ $flex }) => $flex};
     min-width: 0;
 
     @media (max-width: 760px) {
         padding-right: 0;
     }
-`
+`;

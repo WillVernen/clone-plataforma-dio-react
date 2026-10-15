@@ -1,10 +1,11 @@
 # DIO — Plataforma de cursos de tecnologia
 
-Projeto de uma plataforma de cursos de tecnologia com página inicial, feed, login e cadastro, desenvolvido com React.
+Projeto de uma plataforma de cursos de tecnologia com página inicial, feed, login e cadastro, desenvolvido com React e TypeScript.
 
 ## Tecnologias
 
 - React
+- TypeScript
 - React Router
 - Styled Components
 - React Hook Form e Yup

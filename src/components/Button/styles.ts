@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button<{ $variant: 'primary' | 'secondary'; $fullWidth: boolean }>`
     background: #565656;
     border: 0;
     border-radius: 22px;

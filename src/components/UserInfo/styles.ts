@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     margin-bottom: 24px;
-`
+`;
 
 export const UserPicture = styled.img`
     width: 32px;
@@ -12,7 +12,7 @@ export const UserPicture = styled.img`
     border-radius: 22px;
     border: 3px solid #ffffff;
     margin-right: 12px;
-`
+`;
 
 export const NameText = styled.div`
     font-family: 'Open Sans';
@@ -21,9 +21,9 @@ export const NameText = styled.div`
     font-size: 18px;
     line-height: 25px;
     color: #ffffff;
-`
+`;
 
-export const Progress = styled.div`
+export const Progress = styled.div<{ $percentual: number }>`
     width: 180px;
     height: 6px;
     background-color: #ffffff;
@@ -40,4 +40,4 @@ export const Progress = styled.div`
         border-radius: 3px;
         background-color: #23dd7a;
     }
-`
+`;

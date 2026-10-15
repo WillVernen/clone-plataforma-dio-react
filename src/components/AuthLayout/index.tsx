@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Header } from '../Header';
 import {
   AuthContainer,
@@ -8,7 +9,15 @@ import {
   Subtitle,
 } from './styles';
 
-const AuthLayout = ({ title, subtitle, message, messageType = 'error', children }) => (
+type AuthLayoutProps = {
+  title: string;
+  subtitle: string;
+  message?: string;
+  messageType?: 'success' | 'error';
+  children: ReactNode;
+};
+
+const AuthLayout = ({ title, subtitle, message, messageType = 'error', children }: AuthLayoutProps) => (
   <>
     <Header />
     <AuthContainer>

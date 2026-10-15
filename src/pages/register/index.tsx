@@ -12,6 +12,12 @@ import { Input } from '../../components/Input';
 import { api } from '../../services/api';
 import { PrivacyText } from './styles';
 
+type RegisterFormValues = {
+  name: string;
+  email: string;
+  password: string;
+};
+
 const schema = yup.object({
   name: yup.string().trim().min(2, 'Informe seu nome completo').required('Informe seu nome'),
   email: yup.string().trim().email('E-mail inválido').required('Informe seu e-mail'),
@@ -20,14 +26,14 @@ const schema = yup.object({
 
 const Register = () => {
   const navigate = useNavigate();
-  const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm({
+  const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm<RegisterFormValues>({
     defaultValues: { name: '', email: '', password: '' },
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
   const [serverError, setServerError] = useState('');
 
-  const onSubmit = async ({ name, email, password }) => {
+  const onSubmit = async ({ name, email, password }: RegisterFormValues) => {
     setServerError('');
     const normalizedEmail = email.trim().toLowerCase();
 
