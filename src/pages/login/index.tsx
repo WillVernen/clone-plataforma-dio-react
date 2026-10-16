@@ -33,7 +33,7 @@ const Login = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<LoginFormValues>({
     defaultValues: { email: '', password: '' },
     resolver: yupResolver(schema),
@@ -77,7 +77,7 @@ const Login = () => {
           variant="secondary"
           type="submit"
           fullWidth
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isValid}
         />
       </form>
       <AuthFooter>

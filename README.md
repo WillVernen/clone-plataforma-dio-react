@@ -40,6 +40,10 @@ A aplicação estará em `http://localhost:3000` e a API em `http://localhost:80
 
 O estado compartilhado de autenticação fica no `AuthContext`, consumido pelo hook `useAuth`. O feed exige uma sessão iniciada; sair limpa o usuário atual. A tela de login e o cadastro usam a API local do JSON Server.
 
+No login, o botão permanece desabilitado até que o e-mail tenha formato válido e a senha tenha pelo menos seis caracteres. As mensagens de validação aparecem junto aos campos. No feed, o campo de busca mantém o texto alinhado dentro do controle.
+
+A página inicial adapta o conteúdo para telas menores, empilhando o texto e a ilustração em uma coluna para melhorar a leitura em tablets e celulares.
+
 Para validar o projeto:
 
 ```sh

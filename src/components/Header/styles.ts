@@ -47,7 +47,8 @@ export const BuscarInputContainer = styled.div`
     height: 30px;
     background: #2d2d37;
     border-radius: 8px;
-    padding: 2px 5px;
+    box-sizing: border-box;
+    padding: 0 8px;
     margin: 0 12px;
 
     display: flex;
@@ -100,6 +101,22 @@ export const SignOutButton = styled.button`
 export const Input = styled.input`
     background: transparent;
     flex: 1;
+    min-width: 0;
     border: 0;
+    box-sizing: border-box;
     color: #ffffff;
+    height: 100%;
+    line-height: 1;
+    padding: 0 0 0 4px;
+    font: inherit;
+
+    &::placeholder {
+        color: #c5c1ce;
+        opacity: 1;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+    }
 `;

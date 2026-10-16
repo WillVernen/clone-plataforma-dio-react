@@ -11,12 +11,6 @@
       "name": "Vernen",
       "email": "vernen@email.com",
       "password": "123456"
-    },
-    {
-      "name": "Will Vernen",
-      "email": "willvernen@email.com",
-      "password": "123456",
-      "id": 3
     }
   ]
 }
