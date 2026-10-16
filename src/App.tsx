@@ -1,23 +1,35 @@
 import {
   BrowserRouter as Router,
+  Navigate,
   Routes,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import { Home } from "./pages/home";
-import { Login } from "./pages/login";
-import { Feed } from "./pages/feed";
-import { Register } from "./pages/register";
+import { AuthContextProvider } from './context/auth';
+import { useAuth } from './hooks/useAuth';
+import { Feed } from './pages/feed';
+import { Home } from './pages/home';
+import { Login } from './pages/login';
+import { Register } from './pages/register';
+
+const ProtectedFeed = () => {
+  const { user } = useAuth();
+
+  return user ? <Feed /> : <Navigate to="/login" replace />;
+};
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Register />} />
-        <Route path="/feed" element={<Feed />} />
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Register />} />
+          <Route path="/feed" element={<ProtectedFeed />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthContextProvider>
     </Router>
   );
 }

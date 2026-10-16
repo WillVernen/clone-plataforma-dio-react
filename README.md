@@ -36,6 +36,17 @@ Requisitos: Node.js e npm.
 
 A aplicação estará em `http://localhost:3000` e a API em `http://localhost:8001`.
 
+## Arquitetura de autenticação
+
+O estado compartilhado de autenticação fica no `AuthContext`, consumido pelo hook `useAuth`. O feed exige uma sessão iniciada; sair limpa o usuário atual. A tela de login e o cadastro usam a API local do JSON Server.
+
+Para validar o projeto:
+
+```sh
+npm test -- --watchAll=false
+npm run build
+```
+
 ## Credenciais para teste local
 
 - E-mail: `will@email.com`

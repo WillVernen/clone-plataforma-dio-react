@@ -80,6 +80,21 @@ export const UserPicture = styled.img`
     height: 32px;
     border-radius: 22px;
     border: 2px solid #ffffff;
+    margin-right: 12px;
+`;
+
+export const SignOutButton = styled.button`
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+
+    &:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
+    }
 `;
 
 export const Input = styled.input`

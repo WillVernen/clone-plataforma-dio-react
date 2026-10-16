@@ -50,7 +50,7 @@ const Register = () => {
       await api.post('/users', {
         name: name.trim(),
         email: normalizedEmail,
-        senha: password,
+        password,
       });
       navigate('/login', {
         state: { message: 'Cadastro realizado! Entre com seu e-mail e sua senha.' },

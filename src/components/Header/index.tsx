@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-dio.png';
+
+import { useAuth } from '../../hooks/useAuth';
 import { Button } from '../Button';
 
 import {
@@ -11,14 +13,13 @@ import {
   Row,
   Wrapper,
   Logo,
+  SignOutButton,
   UserPicture,
 } from './styles';
 
-type HeaderProps = {
-  autenticado?: boolean;
-};
+const Header = () => {
+  const { user, handleSignOut } = useAuth();
 
-const Header = ({ autenticado = false }: HeaderProps) => {
   return (
     <Wrapper>
       <Container>
@@ -26,7 +27,7 @@ const Header = ({ autenticado = false }: HeaderProps) => {
           <Link to="/" aria-label="Página inicial da DIO">
             <Logo src={logo} alt="Logo da DIO" />
           </Link>
-          {autenticado ? (
+          {user ? (
             <>
               <BuscarInputContainer>
                 <Input placeholder="Buscar..." />
@@ -37,8 +38,11 @@ const Header = ({ autenticado = false }: HeaderProps) => {
           ) : null}
         </Row>
         <Row>
-          {autenticado ? (
-            <UserPicture src="https://avatars.githubusercontent.com/u/49912459?v=4" alt="Perfil do usuário" />
+          {user ? (
+            <>
+              <UserPicture src="https://avatars.githubusercontent.com/u/49912459?v=4" alt={`Perfil de ${user.name}`} />
+              <SignOutButton type="button" onClick={handleSignOut}>Sair</SignOutButton>
+            </>
           ) : (
             <>
               <MenuRight to="/">Home</MenuRight>
